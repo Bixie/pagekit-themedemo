@@ -27,6 +27,19 @@ return [
 	'config' => [
 		'mainpage_title' => '',
 		'tags' => []
+	],
+
+	'events' => [
+
+		'view.system/widget/edit' => function ($event, $view) use ($app) {
+			$view->script('widget-demo', 'bixie/themedemo:app/bundle/widget-demo.js', 'widget-edit');
+			$view->data('$themedemo' , [
+				'config' => $app->module('bixie/themedemo')->config(),
+				'styles' => $app->theme()->getStyles()
+			]);
+		}
+
+
 	]
 
 ];

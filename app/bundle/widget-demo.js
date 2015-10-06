@@ -44,48 +44,49 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(3)
-	module.exports.template = __webpack_require__(4)
+	module.exports = __webpack_require__(5)
+	module.exports.template = __webpack_require__(6)
 
 
 /***/ },
 /* 1 */,
 /* 2 */,
-/* 3 */
+/* 3 */,
+/* 4 */,
+/* 5 */
 /***/ function(module, exports) {
 
 	module.exports = {
 
-	        props: ['package'],
+	        section: {
+	            label: 'Demo',
+	            priority: 190
+	        },
 
-	        settings: true,
+	        data: function () {
+	            return window.$themedemo;
+	        },
 
-	        methods: {
+	        props: ['widget', 'config'],
 
-	            save: function () {
-	                this.$http.post('admin/system/settings/config', {
-	                    name: 'bixie/tehemedemo',
-	                    config: this.package.config
-	                }, function () {
-	                    this.$notify('Settings saved.', '');
-	                }).error(function (data) {
-	                    this.$notify(data, 'danger');
-	                }).always(function () {
-	                    this.$parent.close();
+	        filters: {
+	            themeStyles: function (value, select) {
+	                var vm = this, options = select ? [{value: '', text: vm.$trans('- default style -')}] : [];
+	                _.each(value, function (style) {
+	                    options.push({value: style, text: vm.$trans(_.startCase(style))});
 	                });
+	                return options;
 	            }
-
 	        }
-
 	    };
 
-	    window.Extensions.components['settings-themedemo'] = module.exports;
+	    window.Widgets.components['widget-demo'] = module.exports;
 
 /***/ },
-/* 4 */
+/* 6 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"uk-form uk-form-horizontal\">\n\n        <div class=\"uk-margin uk-flex uk-flex-space-between uk-flex-wrap\" data-uk-margin>\n            <div data-uk-margin>\n\n                <h2 class=\"uk-margin-remove\">{{ 'Theme demo Settings' | trans }}</h2>\n\n            </div>\n            <div data-uk-margin>\n\n                <button class=\"uk-button uk-button-primary\" v-on=\"click: save\">{{ 'Save' | trans }}</button>\n\n            </div>\n        </div>\n\n\n    </div>";
+	module.exports = "<div class=\"uk-form-horizontal\">\r\n\r\n        <div class=\"uk-form-row\">\r\n            <label class=\"uk-form-label\">{{ 'Demo style' | trans }}</label>\r\n            <div class=\"uk-form-controls\">\r\n                <select class=\"uk-form-width-large\" v-model=\"widget.theme.demo_style\" options=\"styles | themeStyles true\"></select>\r\n            </div>\r\n        </div>\r\n\r\n    </div>";
 
 /***/ }
 /******/ ]);

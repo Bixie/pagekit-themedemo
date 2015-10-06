@@ -4,6 +4,7 @@ module.exports = [
     {
         entry: {
             /*pagekit addons*/
+            "widget-demo": "./app/components/widget-demo.vue",
             "settings": "./app/components/settings.vue"
         },
         output: {
