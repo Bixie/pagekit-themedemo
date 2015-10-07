@@ -18,6 +18,12 @@ return [
 			$sessionStyle = $app['session']->get('_bixieThemedemo.style');
 			if ($sessionStyle) {
 				$app['theme']->config['default_style'] = $sessionStyle;
+				if ($app['locator']->get('storage/logo_' . $sessionStyle . '.png')) {
+					$app['theme']->config['logo'] = '/storage/logo_' . $sessionStyle . '.png';
+				}
+				if ($app['locator']->get('storage/favicon_' . $sessionStyle . '.ico')) {
+					$app->module('system/site')->config['icons']['favicon'] = '/storage/favicon_' . $sessionStyle . '.ico';
+				}
 			}
 		});
 	},
