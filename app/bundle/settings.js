@@ -45,8 +45,20 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__(3)
-	module.exports.template = __webpack_require__(4)
 
+	if (module.exports.__esModule) module.exports = module.exports.default
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(4)
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "C:\\BixieProjects\\pagekit\\pagekit\\packages\\bixie\\themedemo\\app\\components\\settings.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+	  }
+	})()}
 
 /***/ },
 /* 1 */,
@@ -54,32 +66,59 @@
 /* 3 */
 /***/ function(module, exports) {
 
+	'use strict';
+
+	// <template>
+
+	//     <div class="uk-form uk-form-horizontal">
+
+	//         <div class="uk-margin uk-flex uk-flex-space-between uk-flex-wrap" data-uk-margin>
+	//             <div data-uk-margin>
+
+	//                 <h2 class="uk-margin-remove">{{ 'Theme demo Settings' | trans }}</h2>
+
+	//             </div>
+	//             <div data-uk-margin>
+
+	//                 <button class="uk-button uk-button-primary" v-on="click: save">{{ 'Save' | trans }}</button>
+
+	//             </div>
+	//         </div>
+
+	//     </div>
+
+	// </template>
+
+	// <script>
+
 	module.exports = {
 
-	        props: ['package'],
+	    props: ['package'],
 
-	        settings: true,
+	    settings: true,
 
-	        methods: {
+	    methods: {
 
-	            save: function () {
-	                this.$http.post('admin/system/settings/config', {
-	                    name: 'bixie/tehemedemo',
-	                    config: this.package.config
-	                }, function () {
-	                    this.$notify('Settings saved.', '');
-	                }).error(function (data) {
-	                    this.$notify(data, 'danger');
-	                }).always(function () {
-	                    this.$parent.close();
-	                });
-	            }
-
+	        save: function save() {
+	            this.$http.post('admin/system/settings/config', {
+	                name: 'bixie/tehemedemo',
+	                config: this.package.config
+	            }, function () {
+	                this.$notify('Settings saved.', '');
+	            }).error(function (data) {
+	                this.$notify(data, 'danger');
+	            }).always(function () {
+	                this.$parent.close();
+	            });
 	        }
 
-	    };
+	    }
 
-	    window.Extensions.components['settings-themedemo'] = module.exports;
+	};
+
+	window.Extensions.components['settings-themedemo'] = module.exports;
+
+	// </script>
 
 /***/ },
 /* 4 */
