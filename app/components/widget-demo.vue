@@ -5,7 +5,9 @@
         <div class="uk-form-row">
             <label class="uk-form-label">{{ 'Demo style' | trans }}</label>
             <div class="uk-form-controls">
-                <select class="uk-form-width-large" v-model="widget.theme.demo_style" options="styles | themeStyles true"></select>
+                <select class="uk-form-width-large" v-model="widget.theme.demo_style">
+                    <option v-for="option in styles | themeStyles true" :value="option.id">{{ option.value }}</option>
+                </select>
             </div>
         </div>
 
@@ -39,6 +41,6 @@
         }
     };
 
-    window.Widgets.components['widget-demo'] = module.exports;
+    window.Widgets.components['bixie-themedemo:settings'] = module.exports;
 
 </script>

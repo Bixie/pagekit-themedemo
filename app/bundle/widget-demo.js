@@ -80,7 +80,11 @@
 
 	//             <div class="uk-form-controls">
 
-	//                 <select class="uk-form-width-large" v-model="widget.theme.demo_style" options="styles | themeStyles true"></select>
+	//                 <select class="uk-form-width-large" v-model="widget.theme.demo_style">
+
+	//                     <option v-for="option in styles | themeStyles true" :value="option.id">{{ option.value }}</option>
+
+	//                 </select>
 
 	//             </div>
 
@@ -117,7 +121,7 @@
 	    }
 	};
 
-	window.Widgets.components['widget-demo'] = module.exports;
+	window.Widgets.components['bixie-themedemo:settings'] = module.exports;
 
 	// </script>
 
@@ -125,7 +129,7 @@
 /* 6 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"uk-form-horizontal\">\r\n\r\n        <div class=\"uk-form-row\">\r\n            <label class=\"uk-form-label\">{{ 'Demo style' | trans }}</label>\r\n            <div class=\"uk-form-controls\">\r\n                <select class=\"uk-form-width-large\" v-model=\"widget.theme.demo_style\" options=\"styles | themeStyles true\"></select>\r\n            </div>\r\n        </div>\r\n\r\n    </div>";
+	module.exports = "<div class=\"uk-form-horizontal\">\r\n\r\n        <div class=\"uk-form-row\">\r\n            <label class=\"uk-form-label\">{{ 'Demo style' | trans }}</label>\r\n            <div class=\"uk-form-controls\">\r\n                <select class=\"uk-form-width-large\" v-model=\"widget.theme.demo_style\">\r\n                    <option v-for=\"option in styles | themeStyles true\" :value=\"option.id\">{{ option.value }}</option>\r\n                </select>\r\n            </div>\r\n        </div>\r\n\r\n    </div>";
 
 /***/ }
 /******/ ]);

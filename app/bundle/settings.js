@@ -80,7 +80,7 @@
 	//             </div>
 	//             <div data-uk-margin>
 
-	//                 <button class="uk-button uk-button-primary" v-on="click: save">{{ 'Save' | trans }}</button>
+	//                 <button class="uk-button uk-button-primary" @click="save">{{ 'Save' | trans }}</button>
 
 	//             </div>
 	//         </div>
@@ -124,7 +124,7 @@
 /* 4 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"uk-form uk-form-horizontal\">\n\n        <div class=\"uk-margin uk-flex uk-flex-space-between uk-flex-wrap\" data-uk-margin>\n            <div data-uk-margin>\n\n                <h2 class=\"uk-margin-remove\">{{ 'Theme demo Settings' | trans }}</h2>\n\n            </div>\n            <div data-uk-margin>\n\n                <button class=\"uk-button uk-button-primary\" v-on=\"click: save\">{{ 'Save' | trans }}</button>\n\n            </div>\n        </div>\n\n\n    </div>";
+	module.exports = "<div class=\"uk-form uk-form-horizontal\">\n\n        <div class=\"uk-margin uk-flex uk-flex-space-between uk-flex-wrap\" data-uk-margin>\n            <div data-uk-margin>\n\n                <h2 class=\"uk-margin-remove\">{{ 'Theme demo Settings' | trans }}</h2>\n\n            </div>\n            <div data-uk-margin>\n\n                <button class=\"uk-button uk-button-primary\" @click=\"save\">{{ 'Save' | trans }}</button>\n\n            </div>\n        </div>\n\n\n    </div>";
 
 /***/ }
 /******/ ]);

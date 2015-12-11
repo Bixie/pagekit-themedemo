@@ -39,6 +39,7 @@ return [
 
 		'view.system/widget/edit' => function ($event, $view) use ($app) {
 			$view->script('widget-demo', 'bixie/themedemo:app/bundle/widget-demo.js', 'widget-edit');
+			if (strpos($app->theme()->name, 'bix') === false) return;
 			$view->data('$themedemo' , [
 				'config' => $app->module('bixie/themedemo')->config(),
 				'styles' => $app->theme()->getStyles()
