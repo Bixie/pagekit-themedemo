@@ -40,14 +40,15 @@
 /******/ 	return __webpack_require__(0);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(5)
+	module.exports = __webpack_require__(8)
 
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(6)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(9)
 	if (false) {(function () {  module.hot.accept()
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
@@ -61,11 +62,8 @@
 	})()}
 
 /***/ },
-/* 1 */,
-/* 2 */,
-/* 3 */,
-/* 4 */,
-/* 5 */
+
+/***/ 8:
 /***/ function(module, exports) {
 
 	'use strict';
@@ -126,10 +124,12 @@
 	// </script>
 
 /***/ },
-/* 6 */
+
+/***/ 9:
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"uk-form-horizontal\">\r\n\r\n        <div class=\"uk-form-row\">\r\n            <label class=\"uk-form-label\">{{ 'Demo style' | trans }}</label>\r\n            <div class=\"uk-form-controls\">\r\n                <select class=\"uk-form-width-large\" v-model=\"widget.theme.demo_style\">\r\n                    <option v-for=\"option in styles | themeStyles true\" :value=\"option.id\">{{ option.value }}</option>\r\n                </select>\r\n            </div>\r\n        </div>\r\n\r\n    </div>";
 
 /***/ }
-/******/ ]);
+
+/******/ });

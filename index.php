@@ -35,6 +35,9 @@ return [
 		'tags' => []
 	],
 
+	'formmakerfields' => 'fieldtypes',
+//	'userprofilefields' => 'fields',
+
 	'events' => [
 
 		'view.system/widget/edit' => function ($event, $view) use ($app) {
